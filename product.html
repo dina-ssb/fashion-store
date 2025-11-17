@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Black - THE ANNEX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">THE ANNEX</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <a href="shop.html" class="back-link">← Back to Shop</a>
+            
+            <div class="detail-grid">
+                <!-- Product Images -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="images/products/item-1.jpg" alt="Minimalist Black Hoodie" id="mainImage">
+                    </div>
+                    <div class="thumbnail-row">
+                        <img src="images/products/item-1.jpg" alt="View 1" class="thumb active">
+                        <img src="images/products/item-2.jpg" alt="View 2" class="thumb">
+                        <img src="images/products/item-3.jpg" alt="View 3" class="thumb">
+                        <img src="images/products/item-4.jpg" alt="View 4" class="thumb">
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="product-details">
+                    <h1 class="product-title">Minimalist Black</h1>
+                    <p class="product-price">$89.00</p>
+                    
+                    <div class="product-description">
+                        <p>Our signature minimalist hoodie crafted from premium cotton blend. 
+                        Features a relaxed fit with ribbed cuffs and hem. Perfect for everyday wear 
+                        with timeless design that transcends seasons.</p>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="size-selector">
+                        <label>Select Size</label>
+                        <div class="size-options">
+                            <button class="size-option">XS</button>
+                            <button class="size-option">S</button>
+                            <button class="size-option active">M</button>
+                            <button class="size-option">L</button>
+                            <button class="size-option">XL</button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="quantity-selector">
+                        <label>Quantity</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart -->
+                    <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Add to Cart</button>
+                    <button class="btn" style="width: 100%;">Add to Wishlist</button>
+
+                    <!-- Product Details -->
+                    <div class="product-specs">
+                        <h3>Product Details</h3>
+                        <ul>
+                            <li><strong>Material:</strong> 80% Cotton, 20% Polyester</li>
+                            <li><strong>Weight:</strong> 300gsm</li>
+                            <li><strong>Fit:</strong> Relaxed</li>
+                            <li><strong>Care:</strong> Machine wash cold</li>
+                            <li><strong>Made in:</strong> Portugal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-section">
+                <h2 class="section-title">You May Also Like</h2>
+                <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/products/item-2.jpg" alt="Oversized Gray">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Oversized Gray</h3>
+                            <p class="product-description">Heavyweight fleece</p>
+                            <p class="product-price">$95.00</p>
+                            <a href="product.html" class="btn">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/products/item-3.jpg" alt="Classic White">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Classic White</h3>
+                            <p class="product-description">Timeless design</p>
+                            <p class="product-price">$85.00</p>
+                            <a href="product.html" class="btn">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/products/item-4.jpg" alt="Urban Black">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Urban Black</h3>
+                            <p class="product-description">Structured fit</p>
+                            <p class="product-price">$92.00</p>
+                            <a href="product.html" class="btn">View Details</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>THE ANNEX</h3>
+                    <p>Premium winter wear for the modern individual.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="shop.html">Shop</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@theannex.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 THE ANNEX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
