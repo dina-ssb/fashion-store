@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - THE ANNEX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">THE ANNEX</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <a href="shop.html" class="back-link">← Back to Shop</a>
+
+            <div class="detail-grid">
+                <!-- Product Images -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="" alt="" id="mainImage">
+                    </div>
+                    <div class="thumbnail-row" id="thumbnailRow">
+                        <!-- Thumbnails will be loaded by JS -->
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="product-details">
+                    <h1 class="product-title" id="productTitle">Loading...</h1>
+                    <p class="product-price" id="productPrice">$0.00</p>
+
+                    <div class="product-description">
+                        <p id="productDescription">Loading...</p>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="size-selector">
+                        <label>Select Size</label>
+                        <div class="size-options">
+                            <button class="size-option" data-size="XS">XS</button>
+                            <button class="size-option" data-size="S">S</button>
+                            <button class="size-option active" data-size="M">M</button>
+                            <button class="size-option" data-size="L">L</button>
+                            <button class="size-option" data-size="XL">XL</button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="quantity-selector">
+                        <label>Quantity</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" id="decreaseQty">−</button>
+                            <input type="number" value="1" min="1" max="99" class="qty-input" id="quantityInput">
+                            <button class="qty-btn" id="increaseQty">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <button class="btn btn-primary" id="addToCartBtn" style="width: 100%; margin-bottom: 1rem;">
+                        Add to Cart
+                    </button>
+                    <button class="btn" style="width: 100%;">
+                        Add to Wishlist
+                    </button>
+
+                    <!-- Product Specs -->
+                    <div class="product-specs">
+                        <h3>Product Details</h3>
+                        <ul id="productSpecs">
+                            <!-- Will be loaded by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-section">
+                <h2 class="section-title">You May Also Like</h2>
+                <div class="product-grid" id="relatedProducts" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <!-- Will be loaded by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>THE ANNEX</h3>
+                    <p>Premium winter wear for the modern individual.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="shop.html">Shop</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@theannex.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 THE ANNEX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/products-data.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

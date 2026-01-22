@@ -1,0 +1,166 @@
+/* ========== SUCCESS SECTION ========== */
+.success-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 0 4rem;
+    margin-top: 70px;
+}
+
+.success-content {
+    max-width: 700px;
+    text-align: center;
+    background: var(--soft-white);
+    padding: 4rem 3rem;
+    border: 1px solid var(--border-light);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    background: var(--primary-black);
+    color: var(--pure-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    transform: scale(0);
+}
+
+.success-content h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.success-message {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+/* ========== ORDER INFO ========== */
+.order-info {
+    background: var(--pure-white);
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.order-info h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.95rem;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row span {
+    color: var(--text-gray);
+}
+
+.info-row strong {
+    color: var(--primary-black);
+    font-weight: 500;
+}
+
+/* ========== SUCCESS MESSAGE BOX ========== */
+.success-message-box {
+    background: var(--pure-white);
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    margin-bottom: 2.5rem;
+}
+
+.success-message-box p {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.success-message-box p:last-child {
+    margin-bottom: 0;
+}
+
+.success-message-box strong {
+    color: var(--primary-black);
+}
+
+/* ========== SUCCESS ACTIONS ========== */
+.success-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.success-actions .btn {
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.success-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .success-section {
+        padding: 7rem 0 3rem;
+    }
+    
+    .success-content {
+        padding: 3rem 2rem;
+    }
+    
+    .success-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    
+    .success-content h1 {
+        font-size: 2rem;
+    }
+    
+    .success-message {
+        font-size: 1rem;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .success-actions {
+        flex-direction: column;
+    }
+    
+    .success-actions .btn {
+        width: 100%;
+    }
+}

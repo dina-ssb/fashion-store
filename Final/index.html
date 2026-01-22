@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ANNEX - Winter Collection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">THE ANNEX</div>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart <span class="cart-count" id="cartCount">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero-main.jpg" alt="Winter Collection" class="hero-image">
+        <div class="hero-content" id="heroContent">
+            <h1 class="hero-title">Winter 2024</h1>
+            <p class="hero-subtitle">New Collection</p>
+            <a href="shop.html" class="cta-button">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Collection</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will load here -->
+            </div>
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="shop.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section" style="background: var(--soft-white);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">Our Philosophy</h2>
+                <p style="font-size: 1rem; line-height: 2; color: var(--text-gray); margin-bottom: 2rem;">
+                    We believe in timeless design, exceptional quality, and sustainable practices.
+                    Each piece is crafted to last, combining minimalist aesthetics with maximum comfort.
+                </p>
+                <a href="about.html" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">Stay Updated</h2>
+                <p style="color: var(--text-gray); margin-bottom: 2rem;">
+                    Subscribe to receive updates about new collections and exclusive offers.
+                </p>
+                <form id="newsletterForm" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <input type="email" id="emailInput" placeholder="Your email address" required
+                        style="flex: 1; padding: 1rem; border: 1px solid var(--border-light); font-size: 0.9rem; min-width: 250px;">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>THE ANNEX</h3>
+                    <p>Premium winter wear for the modern individual.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="shop.html">Shop</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@theannex.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 THE ANNEX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickModal">
+        <div class="modal-box">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        console.log('JavaScript loaded!'); // Test if JS is running
+        
+        // Products Data
+        const products = [
+            {id: 1, name: "Minimalist Black", desc: "Premium cotton blend, relaxed fit", price: 89, img: "images/products/item-1.jpg"},
+            {id: 2, name: "Oversized Gray", desc: "Heavyweight fleece, modern cut", price: 95, img: "images/products/item-2.jpg"},
+            {id: 3, name: "Classic White", desc: "Timeless design, soft texture", price: 85, img: "images/products/item-3.jpg"},
+            {id: 4, name: "Urban Black", desc: "Structured fit, premium quality", price: 92, img: "images/products/item-4.jpg"}
+        ];
+
+        // Wait for DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded!');
+            
+            // Get elements
+            const navbar = document.getElementById('navbar');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+            const productGrid = document.getElementById('productGrid');
+            const scrollTop = document.getElementById('scrollTop');
+            const quickModal = document.getElementById('quickModal');
+            const modalClose = document.getElementById('modalClose');
+            const cartCount = document.getElementById('cartCount');
+            const newsletterForm = document.getElementById('newsletterForm');
+            const formMessage = document.getElementById('formMessage');
+            const heroContent = document.getElementById('heroContent');
+
+            // Hero Animation
+            setTimeout(() => {
+                if (heroContent) {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                }
+            }, 300);
+
+            // Mobile Menu
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                });
+            }
+
+            // Sticky Navbar
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                    scrollTop.classList.add('show');
+                } else {
+                    navbar.classList.remove('scrolled');
+                    scrollTop.classList.remove('show');
+                }
+            });
+
+            // Scroll to Top
+            if (scrollTop) {
+                scrollTop.addEventListener('click', function() {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            }
+
+            // Render Products
+            if (productGrid) {
+                productGrid.innerHTML = products.map((p, i) => `
+                    <div class="product-card fade-in" style="animation-delay: ${i * 0.1}s">
+                        <div class="product-image">
+                            <img src="${p.img}" alt="${p.name}">
+                            <button class="quick-btn" onclick="showQuick(${p.id})">Quick View</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">${p.name}</h3>
+                            <p class="product-description">${p.desc}</p>
+                            <p class="product-price">$${p.price.toFixed(2)}</p>
+                            <a href="product.html?id=${p.id}" class="btn">View Details</a>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Observe animations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) entry.target.classList.add('visible');
+                    });
+                }, {threshold: 0.1});
+                
+                document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            }
+
+            // Newsletter
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('emailInput').value.trim();
+                    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    
+                    if (!regex.test(email)) {
+                        showMsg('Please enter a valid email', 'error');
+                        return;
+                    }
+                    
+                    showMsg('Thanks for subscribing!', 'success');
+                    document.getElementById('emailInput').value = '';
+                });
+            }
+
+            // Update cart count
+            updateCartCount();
+
+            // Modal close
+            if (modalClose) {
+                modalClose.onclick = closeModal;
+            }
+            if (quickModal) {
+                quickModal.onclick = function(e) {
+                    if (e.target === quickModal) closeModal();
+                };
+            }
+        });
+
+        // Quick View
+        function showQuick(id) {
+            const p = products.find(x => x.id === id);
+            const modal = document.getElementById('quickModal');
+            const content = document.getElementById('modalContent');
+            
+            if (modal && content && p) {
+                content.innerHTML = `
+                    <div class="quick-view">
+                        <div class="quick-img"><img src="${p.img}" alt="${p.name}"></div>
+                        <div class="quick-info">
+                            <h2>${p.name}</h2>
+                            <p class="price">$${p.price.toFixed(2)}</p>
+                            <p class="desc">${p.desc}</p>
+                            <div class="options">
+                                <label>Size: 
+                                    <select>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option>L</option>
+                                        <option>XL</option>
+                                    </select>
+                                </label>
+                                <label>Qty: <input type="number" value="1" min="1" max="10"></label>
+                            </div>
+                            <button class="btn btn-primary" onclick="addCart(${p.id})">Add to Cart</button>
+                            <a href="product.html?id=${p.id}" class="btn">Full Details</a>
+                        </div>
+                    </div>
+                `;
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('quickModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Cart
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart') || '[]');
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function addCart(id) {
+            const p = products.find(x => x.id === id);
+            const cart = getCart();
+            const item = cart.find(x => x.id === id);
+            
+            if (item) {
+                item.quantity++;
+            } else {
+                cart.push({id: p.id, name: p.name, price: p.price, img: p.img, quantity: 1});
+            }
+            
+            saveCart(cart);
+            alert('Added to cart!');
+            closeModal();
+        }
+
+        function updateCartCount() {
+            const cart = getCart();
+            const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const countEl = document.getElementById('cartCount');
+            if (countEl) {
+                countEl.textContent = total;
+                countEl.style.display = total > 0 ? 'inline-block' : 'none';
+            }
+        }
+
+        function showMsg(msg, type) {
+            const formMessage = document.getElementById('formMessage');
+            if (formMessage) {
+                formMessage.textContent = msg;
+                formMessage.className = `form-message ${type} show`;
+                setTimeout(() => formMessage.classList.remove('show'), 4000);
+            }
+        }
+    </script>
+</body>
+</html>
